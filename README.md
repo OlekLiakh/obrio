@@ -12,7 +12,7 @@ Test automation project for the NebulaX CRM platform.
 1. Clone the repository:
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/OlekLiakh/obrio
 ```
 
 2. Install dependencies:
@@ -34,7 +34,7 @@ TEST_USER_EMAIL=your_email@example.com
 TEST_USER_PASSWORD=your_password
 TEST_USER_NAME=Your Name
 TEST_CLIENT_NAME=Test client
-CRM_URL=https://stage.nebula-expert.com
+CRM_URL=https://domain.com
 ```
 
 ## 🔐 Credentials Management
@@ -44,7 +44,7 @@ All sensitive data (passwords, emails) is stored in the `.env` file and **SHOULD
 ### Using Credentials
 
 ```typescript
-import { Credentials } from '../utils/constants';
+import { Credentials } from "../utils/constants";
 
 // Get test user data
 const user = Credentials.getTestUser();
