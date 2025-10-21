@@ -1,8 +1,4 @@
-export type TTestUser = {
-  email: string;
-  password: string;
-  name: string;
-};
+import { TTestUser } from "./types";
 
 export class Credentials {
   /**

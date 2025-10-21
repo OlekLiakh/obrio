@@ -2,5 +2,6 @@
  * Central export point for all constants and configuration
  */
 
-export { Credentials, type TTestUser } from "./Credentials";
+export { Credentials } from "./Credentials";
 export { PAGE_LIST } from "./Pages";
+export type { TTestUser } from "./types";
