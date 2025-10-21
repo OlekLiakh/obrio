@@ -15,5 +15,3 @@ export const test = base.extend<{
     await use(login);
   },
 });
-
-export { expect };

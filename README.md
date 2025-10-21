@@ -21,10 +21,10 @@ git clone https://github.com/OlekLiakh/obrio
 npm install
 ```
 
-3. Configure environment:
+3. Add environment file:
 
 ```bash
-cp .env.example .env
+.env.{env}
 ```
 
 Edit the `.env` file with your credentials:
@@ -35,22 +35,6 @@ TEST_USER_PASSWORD=your_password
 TEST_USER_NAME=Your Name
 TEST_CLIENT_NAME=Test client
 CRM_URL=https://domain.com
-```
-
-## 🔐 Credentials Management
-
-All sensitive data (passwords, emails) is stored in the `.env` file and **SHOULD NEVER** be committed to git.
-
-### Using Credentials
-
-```typescript
-import { Credentials } from "../utils/constants";
-
-// Get test user data
-const user = Credentials.getTestUser();
-
-// Get base URL
-const baseUrl = Credentials.getBaseUrl();
 ```
 
 ## 📝 Running Tests
