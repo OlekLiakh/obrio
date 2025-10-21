@@ -1,4 +1,5 @@
-.github
+.github/chatmodes
+.github/copilot-instructions.md
 .vscode
 node_modules/
 /test-results/
