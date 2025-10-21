@@ -2,6 +2,7 @@ import { Page, test } from "@playwright/test";
 import { ApplicationBar } from "../components/ApplicationBar";
 import { Drawer } from "../components/Drawer";
 import { PAGE_LIST } from "../../../utils/constants";
+import type { SettingsPage } from "../pages/SettingsPage";
 
 export abstract class ACrmBasePage {
   readonly applicationBar: ApplicationBar;
@@ -19,11 +20,11 @@ export abstract class ACrmBasePage {
     });
   }
 
-  async navigateToSettings() {
+  async navigateToSettings(): Promise<SettingsPage> {
     return test.step("Navigate to Settings page via Application Bar", async () => {
       await this.applicationBar.navigateToSettings();
-      const { SettingsPage } = await import("../pages/SettingsPage");
-      const settingsPage = new SettingsPage(this.page);
+      const { PageFactory } = await import("../PageFactory");
+      const settingsPage = PageFactory.create(this.page).createSettingsPage();
       await settingsPage.waitForPageLoad();
       return settingsPage;
     });

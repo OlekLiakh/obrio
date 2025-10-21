@@ -1,19 +1,14 @@
 import { test as base, expect } from "@playwright/test";
-import { LoginPage } from "../page_objects/crm/pages/LoginPage";
-import { ChatsPage } from "../page_objects/crm/pages/ChatsPage";
-
-type TUserLoginData = {
-  email: string;
-  password: string;
-  name: string;
-};
+import { PageFactory } from "../page_objects/crm/PageFactory";
+import type { ChatsPage } from "../page_objects/crm/pages/ChatsPage";
+import { TLoginUserData } from "../utils/constants";
 
 export const test = base.extend<{
-  loginToCrmAs(user: TUserLoginData): Promise<ChatsPage>;
+  loginToCrmAs(user: TLoginUserData): Promise<ChatsPage>;
 }>({
   loginToCrmAs: async ({ page }, use) => {
-    const login = async (user: TUserLoginData) => {
-      const loginPage = new LoginPage(page);
+    const login = async (user: TLoginUserData) => {
+      const loginPage = PageFactory.create(page).createLoginPage();
       return await loginPage.login(user);
     };
 

@@ -1,11 +1,11 @@
-import { TTestUser } from "./types";
+import { TLoginUserData } from "./types";
 
 export class Credentials {
   /**
    * Get test user credentials from environment variables
    * @throws Error if required environment variables are not set
    */
-  static getCrmTestUser(): TTestUser {
+  static getCrmTestUser(): TLoginUserData {
     const email = process.env.TEST_USER_EMAIL;
     const password = process.env.TEST_USER_PASSWORD;
     const name = process.env.TEST_USER_NAME;

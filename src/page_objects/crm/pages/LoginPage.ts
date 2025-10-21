@@ -1,6 +1,6 @@
 import { test, Locator, Page } from "@playwright/test";
-import { ChatsPage } from "./ChatsPage";
-import { Credentials, TTestUser } from "../../../utils/constants";
+import { Credentials, TLoginUserData } from "../../../utils/constants";
+import type { ChatsPage } from "./ChatsPage";
 
 export class LoginPage {
   private url = `${Credentials.getBaseUrl()}login-old`;
@@ -16,13 +16,14 @@ export class LoginPage {
     );
   }
 
-  async login(user: TTestUser): Promise<ChatsPage> {
+  async login(user: TLoginUserData): Promise<ChatsPage> {
     return test.step("Navigate to CRM login page and perform login", async () => {
       await this.page.goto(this.url);
       await this.emailInput.fill(user.email);
       await this.passwordInput.fill(user.password);
       await this.submitButton.click();
-      const chatPage = new ChatsPage(this.page);
+      const { PageFactory } = await import("../PageFactory");
+      const chatPage = PageFactory.create(this.page).createChatsPage();
       await chatPage.applicationBar.verifyUserName(user.name);
       await this.page.waitForLoadState("domcontentloaded");
       return chatPage;
