@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'Environment to run tests against'
+        description: "Environment to run tests against"
         required: true
         type: choice
         options:
           - stage
-        default: 'stage'
+        default: "stage"
 
 jobs:
   test:
@@ -28,7 +28,7 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm install 
+        run: npm install
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
