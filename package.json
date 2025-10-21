@@ -1,0 +1,30 @@
+{
+  "type": "module",
+  "name": "obrio_test_task",
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "Oleksandr Liakh alyah124@gmail.com",
+  "license": "",
+  "description": "",
+  "scripts": {
+    "test": "playwright test --config config/playwright.config.ts",
+    "test:headed": "playwright test --headed --config config/playwright.config.ts",
+    "test:debug": "playwright test --debug --config config/playwright.config.ts",
+    "lint": "eslint --config config/eslint.config.js tests/**/*.ts src/**/*.ts",
+    "lint:fix": "eslint --config config/eslint.config.js tests/**/*.ts src/**/*.ts --fix",
+    "format": "prettier --config config/.prettierrc.json --ignore-path config/.prettierignore --write ."
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.8.1",
+    "@typescript-eslint/eslint-plugin": "^8.46.1",
+    "@typescript-eslint/parser": "^8.46.1",
+    "dotenv": "^17.2.3",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
