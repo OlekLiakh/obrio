@@ -3,3 +3,4 @@
  */
 
 export { Credentials, type TTestUser } from "./Credentials";
+export { PAGE_LIST } from "./Pages";

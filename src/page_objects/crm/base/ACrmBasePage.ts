@@ -1,6 +1,7 @@
 import { Page, test } from "@playwright/test";
 import { ApplicationBar } from "../components/ApplicationBar";
-import { Drawer, PAGE_LIST } from "../components/Drawer";
+import { Drawer } from "../components/Drawer";
+import { PAGE_LIST } from "../../../utils/constants";
 
 export abstract class ACrmBasePage {
   readonly applicationBar: ApplicationBar;

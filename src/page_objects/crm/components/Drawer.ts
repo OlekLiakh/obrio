@@ -1,12 +1,5 @@
 import { Locator, Page, test } from "@playwright/test";
-
-export enum PAGE_LIST {
-  CHATS = "Chats",
-  PINGS = "Pings",
-  INVOICES = "Invoices",
-  TRANSACTIONS = "Transactions",
-  REVIEWS = "Reviews",
-}
+import { PAGE_LIST } from "../../../utils/constants";
 
 export class Drawer {
   private pagesList: Locator;

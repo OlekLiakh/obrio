@@ -1,6 +1,6 @@
 import { test } from "../../src/fixtures/fixtures";
 import { request, expect } from "@playwright/test";
-import { PAGE_LIST } from "../../src/page_objects/crm/components/Drawer";
+import { PAGE_LIST } from "../../src/utils/constants";
 import { Credentials } from "../../src/utils/constants/Credentials";
 import { ApiClient } from "../../src/utils/api/ApiClient";
 
